@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  from: MyString
+  to: MyString
+  date: 2016-03-25
+  time: 2016-03-25 22:38:13
+
+two:
+  from: MyString
+  to: MyString
+  date: 2016-03-25
+  time: 2016-03-25 22:38:13

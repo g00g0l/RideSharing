@@ -1,0 +1,22 @@
+%p#notice= notice
+%p
+  %strong From:
+  = @ride.from
+%p
+  %strong To:
+  = @ride.to
+%p
+  %strong Date:
+  = @ride.date
+%p
+  %strong Time:
+  = @ride.time
+%p
+  %strong Distance:
+  = @ride.distance
+%p
+  %strong UserID:
+  = @ride.user_id
+= link_to 'Edit', edit_ride_path(@ride)
+|
+= link_to 'Back', rides_path

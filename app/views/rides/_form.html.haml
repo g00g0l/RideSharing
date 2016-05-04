@@ -1,0 +1,8 @@
+= simple_form_for(@ride) do |f|
+  =f.input :from, label:false, placeholder:"From"
+  =f.input :to, label:false, placeholder:"To"
+  =f.input :date
+  =f.input :time
+  =f.button :submit, class: 'btn btn-md btn-success'
+  
+
