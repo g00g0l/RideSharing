@@ -24,24 +24,6 @@ ActiveRecord::Schema.define(version: 20160504181703) do
 
   add_index "authentication_providers", ["name"], name: "index_name_on_authentication_providers", using: :btree
 
-  create_table "identities", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "provider"
-    t.string   "accesstoken"
-    t.string   "refreshtoken"
-    t.string   "uid"
-    t.string   "name"
-    t.string   "email"
-    t.string   "nickname"
-    t.string   "image"
-    t.string   "phone"
-    t.string   "urls"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
-
   create_table "rides", force: :cascade do |t|
     t.string   "from"
     t.string   "to"
@@ -84,8 +66,8 @@ ActiveRecord::Schema.define(version: 20160504181703) do
     t.datetime "updated_at",                          null: false
   end
 
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "identities", "users"
   add_foreign_key "rides", "users"
 end
