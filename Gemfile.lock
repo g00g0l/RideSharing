@@ -71,6 +71,7 @@ GEM
       activesupport (>= 4.1.0)
     haml (4.0.7)
       tilt
+    hash-deep-merge (0.1.1)
     hashie (3.4.4)
     httparty (0.13.7)
       json (~> 1.8)
@@ -85,6 +86,8 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.3)
     jwt (1.5.1)
+    lazy_high_charts (1.5.5)
+      hash-deep-merge
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -211,6 +214,7 @@ DEPENDENCIES
   httparty
   jbuilder (~> 2.0)
   jquery-rails
+  lazy_high_charts
   omniauth
   omniauth-facebook
   omniauth-google-oauth2

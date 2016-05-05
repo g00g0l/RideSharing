@@ -36,8 +36,15 @@ gem 'haml'
 #https://github.com/plataformatec/devise
 gem 'devise'
 gem 'domp'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem "omniauth-google-oauth2"
 #https://github.com/jnunemaker/httparty
 gem 'httparty'
+#https://github.com/michelson/lazy_high_charts
+gem 'lazy_high_charts'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -62,7 +69,3 @@ group :development do
 end
 
 
-gem 'omniauth'
-gem 'omniauth-facebook'
-gem 'omniauth-twitter'
-gem "omniauth-google-oauth2"

@@ -24,8 +24,7 @@ html {
 
 body {
   height: 100%;
-  
-  background-color: #FCFFF5;
+  background-color: #FFFFFF;
   font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
@@ -33,7 +32,11 @@ body {
   margin-bottom: 0px;
 }
 
-.glyphicon:before { margin-right: 2px; }
+.table-striped>thead>tr>th, .table-striped>tbody>tr>th, .table-striped>tfoot>tr>th, .table-striped>thead>tr>td, .table-striped>tbody>tr>td, .table-striped>tfoot>tr>td{
+    padding: 5px;
+}
+
+a.btn:visited { color: #fff; }
 
 /* ## NAVBAR CUSTOMISATIONS ## */
 
@@ -41,16 +44,19 @@ body {
   margin-bottom: 0px;
 }
 
+ul.nav a:hover { color: #fff !important; }
+
+
 .navbar-brand {
   a {
-    color: #FCFFF5;
+    color: #fff;
   }
 }
 
 .navbar-default {
   background-color: #193441;
   .navbar-nav li a {
-    color: #FCFFF5;
+    color: #fff;
   }
 }
 
@@ -58,3 +64,48 @@ body {
   max-width: 640px;
   margin: 0 auto;
 }
+
+/* ## Wrapper and styling for the new, edit & devise views ## */
+
+.edit-links {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.registration-bg {
+  padding-top: 4em;
+  height: 100%;
+  background-image: image-url('regbackg.jpg');
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.login-bg {
+  padding-top: 4em;
+  height: 100%;
+  background-image: image-url('loginbg.jpg');
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.log-in{
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center;
+  border: none;
+}
+
+.panel {
+  border-radius: 8px;
+}
+
+.panel-heading{
+  h1 {
+    text-align: center;
+  }
+}
+
