@@ -44,6 +44,7 @@ gem "omniauth-google-oauth2"
 gem 'httparty'
 #https://github.com/michelson/lazy_high_charts
 gem 'lazy_high_charts'
+gem 'highstock-rails'
 
 
 # Use ActiveModel has_secure_password

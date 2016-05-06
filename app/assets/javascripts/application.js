@@ -18,3 +18,5 @@
 //= require highcharts/highcharts
 //= require highcharts/highcharts-more
 //= require highcharts/highstock
+//= require highstock
+//= require highstock/highcharts-more
