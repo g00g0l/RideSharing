@@ -4,9 +4,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     create
   end
 
-  def twitter
-    create
-  end
+  #def twitter
+  #  create
+  #end
   
   def google_oauth2
     create

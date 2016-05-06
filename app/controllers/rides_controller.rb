@@ -5,7 +5,7 @@ class RidesController < ApplicationController
 
   # GET /rides
   # GET /rides.json
-  # GET / rides.xml
+  # GET /rides.xml
   def index
     @rides = Ride.all
     

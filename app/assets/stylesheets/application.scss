@@ -36,7 +36,23 @@ body {
     padding: 5px;
 }
 
-a.btn:visited { color: #fff; }
+a.btn:visited, a.btn-lg:visited { color: #fff; }
+
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;  
+}
+
+:-ms-input-placeholder {  
+   text-align: center; 
+}
 
 /* ## NAVBAR CUSTOMISATIONS ## */
 
@@ -75,7 +91,7 @@ ul.nav a:hover { color: #fff !important; }
 .registration-bg {
   padding-top: 4em;
   height: 100%;
-  background-image: image-url('regbackg.jpg');
+  background-image: image-url('/assets/regbackg.jpg');
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
@@ -85,7 +101,7 @@ ul.nav a:hover { color: #fff !important; }
 .login-bg {
   padding-top: 4em;
   height: 100%;
-  background-image: image-url('loginbg.jpg');
+  background-image: image-url('/assets/loginbg.jpg');
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
