@@ -42,6 +42,8 @@ GEM
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-datepicker-rails (1.6.0.1)
+      railties (>= 3.0)
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -69,6 +71,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    gmaps4rails (2.1.2)
     haml (4.0.7)
       tilt
     hash-deep-merge (0.1.1)
@@ -154,6 +157,11 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.4)
+    rails_stdout_logging (0.0.4)
     railties (4.2.5)
       actionpack (= 4.2.5)
       activesupport (= 4.2.5)
@@ -207,11 +215,13 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
+  bootstrap-datepicker-rails
   bootstrap-sass
   byebug
   coffee-rails (~> 4.1.0)
   devise
   domp
+  gmaps4rails
   haml
   highstock-rails
   httparty
@@ -224,6 +234,7 @@ DEPENDENCIES
   omniauth-twitter
   pg (~> 0.15)
   rails (= 4.2.5)
+  rails_12factor
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   simple_form

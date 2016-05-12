@@ -13,10 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require bootstrap-datepicker
 //= require turbolinks
-//= require_tree .
 //= require highcharts/highcharts
 //= require highcharts/highcharts-more
 //= require highcharts/highstock
 //= require highstock
 //= require highstock/highcharts-more
+//= gmaps
+//= require_tree .
+

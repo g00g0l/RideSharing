@@ -1,27 +1,26 @@
-%p#notice= notice
-%h2 Listing Rides
-%table.table-striped
-  %thead
-    %tr
-      %th.col-md-2 From
-      %th.col-md-2 To
-      %th.col-md-2 Date
-      %th.col-md-2 Time
-      %th.col-md-2 Distance (km)
-  %tbody
-    - @rides.each do |ride|
-      %tr
-        %td= ride.from
-        %td= ride.to
-        %td= ride.date.to_formatted_s(:long_ordinal)
-        %td= ride.time.to_s(:time)
-        %td= ride.distance
-        - if current_user.id == ride.user_id
-          %td= link_to 'Show', ride, :class => "btn btn-success btn-sm"
-          %td= link_to 'Edit', edit_ride_path(ride), :class => "btn btn-warning btn-sm"
-          %td= link_to 'Destroy', ride, :class => "btn btn-danger btn-sm", method: :delete, data: { confirm: 'Are you sure?' }
-        - else
-          %td= link_to 'Show', ride, :class => "btn btn-success btn-sm"
-%br/
-= link_to 'New Ride', new_ride_path, :class => "btn btn-info btn-sm"
-
+.container
+  .jumbotron
+    %h2 Rides 
+    %table.table-striped.table-responsive
+      %thead
+        %tr
+          %th.col-md-2 From
+          %th.col-md-2 To
+          %th.col-md-2 Date
+          %th.col-md-2 Time
+          %th.col-md-2 Distance
+      %tbody
+        - @rides.each do |ride|
+          %tr
+            %td= ride.from
+            %td= ride.to
+            %td= ride.date.to_formatted_s(:long_ordinal)
+            %td= ride.time.to_s(:time)
+            %td= "#{ride.distance} km"
+            - if current_user.id == ride.user_id
+              %td.btn-group.btn-group-sm{"aria-label" => "Actions", :role => "group"}
+                =link_to 'Show', ride, :class => "btn btn-secondary btn-success"
+                =link_to 'Edit', edit_ride_path(ride), :class => "btn btn-secondary btn-warning"
+                =link_to 'Destroy', ride, :class => "btn btn-secondary btn-danger", method: :delete, data: { confirm: 'Are you sure?' }
+            - else
+              %td= link_to 'Show', ride, :class => "btn btn-success btn-sm"

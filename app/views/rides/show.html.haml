@@ -1,22 +1,23 @@
-%p#notice= notice
-%p
-  %strong From:
-  = @ride.from
-%p
-  %strong To:
-  = @ride.to
-%p
-  %strong Date:
-  = @ride.date
-%p
-  %strong Time:
-  = @ride.time
-%p
-  %strong Distance:
-  = @ride.distance
-%p
-  %strong UserID:
-  = @ride.user_id
-= link_to 'Edit', edit_ride_path(@ride)
-|
-= link_to 'Back', rides_path
+.container
+  .jumbotron
+    %h2 Current Ride 
+    %table.table-striped.table-responsive
+      %thead
+        %tr
+          %th.col-md-2 From
+          %th.col-md-2 To
+          %th.col-md-2 Date
+          %th.col-md-2 Time
+          %th.col-md-2 Distance
+          %th.col-md-2 Contact
+      %tbody
+        %tr
+          %td= @ride.from
+          %td= @ride.to
+          %td= @ride.date.to_formatted_s(:long_ordinal)
+          %td= @ride.time.to_s(:time)
+          %td= "#{@ride.distance} km"
+          %td= "#{User.find(@ride.user).email}"
+    %br/
+    = link_to 'Back', rides_path, :class => "btn btn-lg btn-primary"
+

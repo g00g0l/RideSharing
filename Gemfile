@@ -28,6 +28,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'simple_form'
 #gem for bootstrapp http://getbootstrap.com
 gem 'bootstrap-sass'
+gem 'bootstrap-datepicker-rails'
 #Autoprefixer (autoprefixer-rails) is optional, but recommended. It automatically adds the proper vendor prefixes to your CSS code when it is compiled.
 gem 'autoprefixer-rails'
 #gem for HAML https://github.com/haml/haml
@@ -45,6 +46,13 @@ gem 'httparty'
 #https://github.com/michelson/lazy_high_charts
 gem 'lazy_high_charts'
 gem 'highstock-rails'
+#https://github.com/apneadiving/Google-Maps-for-Rails
+gem 'gmaps4rails'
+
+gem 'rails_12factor', group: :production
+ruby "2.3.0"
+
+
 
 
 # Use ActiveModel has_secure_password
