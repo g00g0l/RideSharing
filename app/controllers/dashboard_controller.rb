@@ -36,16 +36,16 @@ class DashboardController < ApplicationController
   end
   
   def get_distance
-    #response = HTTParty.get('http://localhost:3000/rides')
-    #body = JSON.parse(response.body)
-    #return distance = body['distance'][0]
+    response = HTTParty.get('http://falckk.herokuapp.com/rides')
+    body = JSON.parse(response.body)
+    return distance = body['distance'][0]
     #http://stackoverflow.com/questions/24424186/httparty-not-working-with-localhost
-    json = File.read('app/assets/rides.json')
-    rides = JSON.parse(json)
-    distances = []
-    rides.each do |data|
-      distances.push(data['distance'])
-    end
+    #json = File.read('app/assets/rides.json')
+    #rides = JSON.parse(json)
+    #distances = []
+    #rides.each do |data|
+    #  distances.push(data['distance'])
+    #end
     return distances
   end
   
