@@ -95,21 +95,6 @@ class RidesController < ApplicationController
     end
   end
   
-  def gmap
-    @map = GMaps.new(div: '#map', lat: -12.043333, lng: -77.028333)
-    @map.addMarker(lat: -12.043333,
-               lng: -77.028333,
-               title: 'Lima',
-               click: GMaps::JS["function(e) { alert('You clicked in this marker'); }"])
-    @map.addMarker(lat: -12.042,
-               lng: -77.028333,
-               title: 'Marker with InfoWindow',
-               infoWindow: {
-                 content: '<p>HTML Content</p>'
-               })
-  end
-
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_ride
@@ -130,9 +115,13 @@ class RidesController < ApplicationController
   
   def get_distance(ride)
     response = HTTParty.get("http://maps.googleapis.com/maps/api/directions/json?origin=#{ride.from}&destination=#{ride.to}")
-    body = JSON.parse(response.body) 
-    distance_meters = body['routes'][0]['legs'][0]['distance']['value']
-    ride.distance = distance_meters/1000
+    body = JSON.parse(response.body)
+    if body['status'] != "NOT_FOUND"
+      distance_meters = body['routes'][0]['legs'][0]['distance']['value']
+      ride.distance = distance_meters/1000
+    else
+      ride.distance = 0
+    end
   end
   
 end

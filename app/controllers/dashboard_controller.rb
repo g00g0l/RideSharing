@@ -4,7 +4,7 @@ class DashboardController < ApplicationController
     @a2b_distance = LazyHighCharts::HighChart.new('graph') do |f|
       f.title(text: "Distance from point A to B")
       f.xAxis(categories: get_from)
-      f.series(name: "Distance in Kilometers", yAxis: 0, data: get_distance)
+      f.series(name: "Distance in Kilometers", yAxis: 0, data: Ride.pluck(:distance))
 
       f.yAxis [
         {title: {text: "Distance in Kilometers", margin: 30} },
@@ -12,7 +12,6 @@ class DashboardController < ApplicationController
 
       f.chart({defaultSeriesType: "line"})
     end
-    
 
     @chart_globals = LazyHighCharts::HighChartGlobals.new do |f|
       f.global(useUTC: false)
@@ -35,25 +34,9 @@ class DashboardController < ApplicationController
     
   end
   
-  def get_distance
-    #response = HTTParty.get('http://localhost:3000/rides')
-    #body = JSON.parse(response.body)
-    #return distance = body['distance'][0]
-    #http://stackoverflow.com/questions/24424186/httparty-not-working-with-localhost
-    json = File.read('app/assets/rides.json')
-    rides = JSON.parse(json)
-    distances = []
-    rides.each do |data|
-      distances.push(data['distance'])
-    end
-    return distances
-  end
-  
   def get_from
-    json = File.read('app/assets/rides.json')
-    rides = JSON.parse(json)
     from = []
-    rides.each do |data|
+    Ride.find_each do |data|
       from.push("#{data['from']} to #{data['to']}")
     end
     return from
